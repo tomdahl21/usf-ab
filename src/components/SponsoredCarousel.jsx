@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function SponsoredCarousel({ carousel }) {
+export default function SponsoredCarousel({ carousel, onSearch }) {
+  const handleSponsoredClick = () => {
+    if (onSearch) onSearch('Cheese');
+  };
   return (
     <div className="px-4 pt-2 pb-5" style={{ backgroundColor: '#F5F5F5' }}>
       <div className="max-w-7xl mx-auto">
@@ -38,6 +41,7 @@ export default function SponsoredCarousel({ carousel }) {
             <button
               className="w-full text-xs font-semibold py-1 px-2 rounded"
               style={{ color: '#5C8727', border: '1px solid #5C8727', backgroundColor: 'white' }}
+              onClick={handleSponsoredClick}
             >
               {carousel.subtitle}
             </button>
@@ -45,7 +49,7 @@ export default function SponsoredCarousel({ carousel }) {
 
           {/* Product tiles — image on top, title below */}
           {carousel.products.map((product, idx) => (
-            <div key={idx} className="flex-1 cursor-pointer group bg-white rounded p-2" style={{ border: '1px solid #E0E0E0' }}>
+            <div key={idx} className="flex-1 cursor-pointer group bg-white rounded p-2" style={{ border: '1px solid #E0E0E0' }} onClick={handleSponsoredClick}>
               {/* Image */}
               <div className="w-full h-28 bg-white flex items-center justify-center mb-2 rounded">
                 <img

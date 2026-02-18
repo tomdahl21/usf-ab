@@ -245,26 +245,26 @@ export const mockProducts = [
 ];
 
 export const sponsoredCarousel = {
-  brandLogoUrl: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=80&h=80&fit=fill&fill=solid&fill-color=ffffff",
-  brandName: "Monarch",
-  title: "Super Bowl Game Day Ingredients",
+  brandLogoUrl: "https://images.openfoodfacts.org/images/products/007/283/001/1044/front_en.27.400.jpg",
+  brandName: "Tillamook",
+  title: "Premium Dairy & Cheese Selection",
   subtitle: "Shop Now",
   products: [
     {
-      imageUrl: "https://images.unsplash.com/photo-1612440686580-fdf21e0eb786?w=120&h=120&fit=fill&fill=solid&fill-color=ffffff",
-      title: "Hush Puppy, Bag Frozen Partfried Traditional Appetizer"
+      imageUrl: "https://images.openfoodfacts.org/images/products/007/283/001/1044/front_en.27.400.jpg",
+      title: "Cheddar, Sharp, Aged, Yellow, Block"
     },
     {
-      imageUrl: "https://images.unsplash.com/photo-1626082927389-c9ba032f3d69?w=120&h=120&fit=fill&fill=solid&fill-color=ffffff",
-      title: "Appetizers, Pickled Battered Masa Sticks"
+      imageUrl: "https://images.openfoodfacts.org/images/products/004/610/000/1257/front_en.55.400.jpg",
+      title: "Mozzarella, Low Moisture, Whole Milk, Block"
     },
     {
-      imageUrl: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=120&h=120&fit=fill&fill=solid&fill-color=ffffff",
-      title: "Mix, Cornbread Pho-Free Add Water Complete"
+      imageUrl: "https://images.openfoodfacts.org/images/products/265/220/100/7074/front_en.3.400.jpg",
+      title: "Cheddar, Vermont White, Sliced, Deli Style"
     },
     {
-      imageUrl: "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=120&h=120&fit=fill&fill=solid&fill-color=ffffff",
-      title: "Seasoning, All-Purpose, Monarch Signature Blend"
+      imageUrl: "https://images.openfoodfacts.org/images/products/002/531/700/6941/front_en.5.400.jpg",
+      title: "Cheese, American, Yellow, Sliced, Print Wrapped"
     }
   ]
 };

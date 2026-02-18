@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Breadcrumb() {
+export default function Breadcrumb({ onHome }) {
   const breadcrumbs = [
     { label: 'Home', href: '#' },
     { label: 'Browse Products', href: '#' },
@@ -10,7 +10,8 @@ export default function Breadcrumb() {
 
   return (
     <div className="bg-white px-4 py-3" style={{ borderBottomColor: '#E0E0E0', borderBottomWidth: '1px' }}>
-      <div className="max-w-7xl mx-auto flex gap-2 text-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="flex gap-2 text-sm">
         {breadcrumbs.map((crumb, idx) => (
           <React.Fragment key={idx}>
             {idx > 0 && <span style={{ color: '#717073' }}>›</span>}
@@ -23,6 +24,16 @@ export default function Breadcrumb() {
             )}
           </React.Fragment>
         ))}
+        </div>
+        {onHome && (
+          <button
+            onClick={onHome}
+            className="text-xs font-medium hover:underline"
+            style={{ color: '#717073' }}
+          >
+            ← All Variations
+          </button>
+        )}
       </div>
     </div>
   );
