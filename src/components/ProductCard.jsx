@@ -13,13 +13,15 @@ export default function ProductCard({ product }) {
     <div className="bg-white relative rounded-lg p-4" style={{ borderColor: '#E0E0E0', borderWidth: '1px' }}>
       <div className="flex gap-4 md:gap-6">
         {/* Image */}
-        <div className="flex-shrink-0">
-          <img 
-            src={product.imageUrl} 
+        <div
+          className="flex-shrink-0 flex items-center justify-center rounded bg-white w-20 h-20 md:w-24 md:h-24"
+          style={{ borderColor: '#E0E0E0', borderWidth: '1px' }}
+        >
+          <img
+            src={product.imageUrl}
             alt={product.title}
-            className="w-20 h-20 md:w-24 md:h-24 object-cover rounded"
-            style={{ borderColor: '#E0E0E0', borderWidth: '1px' }}
-            onError={(e) => { e.target.src = 'https://via.placeholder.com/100'; }}
+            className="w-full h-full object-contain p-1"
+            onError={(e) => { e.target.src = 'https://via.placeholder.com/100/ffffff/cccccc?text=No+Image'; }}
           />
         </div>
 

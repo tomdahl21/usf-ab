@@ -19,7 +19,7 @@ export default function NavBar() {
   return (
     <nav className="bg-white" style={{ borderBottomColor: '#E0E0E0', borderBottomWidth: '1px' }}>
       {/* Top Navigation */}
-      <div className="px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left: Logo + Location Dropdown */}
         <div className="flex items-center gap-4">
           {/* Logo */}
@@ -90,7 +90,7 @@ export default function NavBar() {
       </div>
 
       {/* Second Row: Main Navigation with Dropdowns */}
-      <div className="px-6 bg-gray-50" style={{ borderTopColor: '#E0E0E0', borderTopWidth: '1px' }}>
+      <div className="max-w-7xl mx-auto px-4" style={{ borderTopColor: '#E0E0E0', borderTopWidth: '1px' }}>
         <div className="flex gap-6 text-sm">
           {navigationItems.map((item) => (
             <div key={item.label} className="relative group">

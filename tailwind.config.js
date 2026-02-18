@@ -18,7 +18,7 @@ export default {
       },
       fontFamily: {
         sans: ['Aktiv Grotesk', 'system-ui', 'sans-serif'],
-        'display': ['Balboa', 'serif'],
+        'display': ['Roboto', 'Balboa', 'sans-serif'],
       },
     },
   },
