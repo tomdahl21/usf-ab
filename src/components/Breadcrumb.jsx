@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Breadcrumb({ onHome }) {
+export default function Breadcrumb() {
   const breadcrumbs = [
     { label: 'Home', href: '#' },
     { label: 'Browse Products', href: '#' },
@@ -25,15 +25,13 @@ export default function Breadcrumb({ onHome }) {
           </React.Fragment>
         ))}
         </div>
-        {onHome && (
-          <button
-            onClick={onHome}
-            className="text-xs font-medium hover:underline"
-            style={{ color: '#717073' }}
-          >
-            ← All Variations
-          </button>
-        )}
+        <a
+          href="#/"
+          className="text-xs font-medium hover:underline"
+          style={{ color: '#717073' }}
+        >
+          ← All Variations
+        </a>
       </div>
     </div>
   );

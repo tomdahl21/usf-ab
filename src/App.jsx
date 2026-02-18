@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Breadcrumb from './components/Breadcrumb';
-import SearchLanding from './components/SearchLanding';
 import ExperienceIndex from './components/ExperienceIndex';
 import VariationSwitcher from './components/VariationSwitcher';
 import V1_CurrentState from './variations/V1_CurrentState';
@@ -21,50 +20,54 @@ const VARIATION_COMPONENTS = {
   v6: V6_SearchSpotlight,
 };
 
-function App() {
-  const [screen, setScreen] = useState('index'); // 'index' | 'search' | 'results'
-  const [searchTerm, setSearchTerm] = useState('');
-  const [variation, setVariation] = useState('v1');
+// Parse variation ID from hash, e.g. "#/v2" → "v2", "#/" or "" → null
+function getVariationFromHash() {
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  return VARIATION_COMPONENTS[hash] ? hash : null;
+}
 
-  const handleLaunch = (variationId) => {
-    setVariation(variationId);
-    setSearchTerm('Cheese');
-    setScreen('results');
+function navigate(variationId) {
+  window.location.hash = variationId ? `/${variationId}` : '/';
+}
+
+export default function App() {
+  const [variation, setVariation] = useState(getVariationFromHash);
+  const [searchTerm, setSearchTerm] = useState('Cheese');
+
+  // Keep state in sync with browser back/forward navigation
+  useEffect(() => {
+    const onHashChange = () => setVariation(getVariationFromHash());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const handleVariationChange = (id) => {
+    navigate(id);
+    setVariation(id);
   };
 
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-    setScreen('results');
-  };
-
-  const handleHome = () => {
-    setScreen('index');
-    setSearchTerm('');
-  };
-
-  if (screen === 'index') {
-    return <ExperienceIndex onLaunch={handleLaunch} />;
+  // No variation in hash → show index
+  if (!variation) {
+    return (
+      <ExperienceIndex
+        onLaunch={(id) => handleVariationChange(id)}
+      />
+    );
   }
 
-  if (screen === 'search') {
-    return <SearchLanding onSearch={handleSearch} onHome={handleHome} />;
-  }
-
-  const ActiveVariation = VARIATION_COMPONENTS[variation] || V1_CurrentState;
+  const ActiveVariation = VARIATION_COMPONENTS[variation];
 
   return (
     <div className="min-h-screen bg-white pb-14">
       <NavBar />
-      <Breadcrumb onHome={handleHome} />
+      <Breadcrumb />
       <ActiveVariation
         products={mockProducts}
         carousel={sponsoredCarousel}
         searchTerm={searchTerm}
-        onSearch={handleSearch}
+        onSearch={setSearchTerm}
       />
-      <VariationSwitcher active={variation} onChange={setVariation} />
+      <VariationSwitcher active={variation} onChange={handleVariationChange} />
     </div>
   );
 }
-
-export default App;
