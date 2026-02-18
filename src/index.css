@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-white;
+    font-family: 'Aktiv Grotesk', system-ui, sans-serif;
+  }
+  
+  button {
+    @apply transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Balboa', serif;
+  }
+}
+
+@layer components {
+  .tag-pill {
+    @apply px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap;
+  }
+  
+  .tag-contract {
+    @apply tag-pill border border-gray-400 text-gray-700 bg-white;
+  }
+  
+  .tag-direct {
+    @apply tag-pill border text-white bg-white;
+    border-color: #CF4520;
+    color: #CF4520;
+  }
+  
+  .tag-recent {
+    @apply tag-pill border border-gray-400 text-gray-700 bg-white;
+  }
+  
+  .tag-scoop {
+    @apply tag-pill text-white;
+    background-color: #CF4520;
+  }
+  
+  .tag-onml {
+    @apply tag-pill border border-gray-400 text-gray-700 bg-white;
+  }
+  
+  .product-card {
+    @apply border border-border-light rounded-lg p-4 hover:shadow-md transition-shadow;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 text-white rounded hover:opacity-90;
+    background-color: #5C8727;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 border rounded hover:bg-green-50;
+    border-color: #5C8727;
+    color: #5C8727;
+  }
+}
