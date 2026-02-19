@@ -1,4 +1,4 @@
-# Moxe Ad Placement Experience — Demo App
+# MOXe Ad Placement Experience — Demo App
 
 **Type:** React Prototype | **Client:** US Foods | **Team:** Slalom Consulting  
 **Status:** In Development | **Version:** 0.1 | **Date:** February 2026  
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This app is a React-based prototype that demonstrates alternative advertising and sponsored content placement strategies within the US Foods Moxe digital ordering platform. It replicates the current Moxe catalog and search result experience using mock data, then presents a suite of 6 ad placement variations that stakeholders can explore interactively via a variation switcher.
+This app is a React-based prototype that demonstrates alternative advertising and sponsored content placement strategies within the US Foods MOXe digital ordering platform. It replicates the current MOXe catalog and search result experience using mock data, then presents a suite of 6 ad placement variations that stakeholders can explore interactively via a variation switcher.
 
 The demo supports alignment discussions between product, digital experience, and revenue stakeholders, and serves as a design artifact for evaluating trade-offs between ad revenue growth and buyer experience quality.
 
@@ -18,7 +18,7 @@ The demo supports alignment discussions between product, digital experience, and
 
 ### Ad Revenue Growth Targets
 
-US Foods has set aggressive ad spend targets for the Moxe platform:
+US Foods has set aggressive ad spend targets for the MOXe platform:
 
 | Year | Target |
 |------|--------|
@@ -52,9 +52,9 @@ The variation switcher allows toggling between 6 layouts instantly with no page 
 
 | ID | Name | Description | Business Hypothesis |
 |----|------|-------------|---------------------|
-| V1 | Current State | Replicates existing Moxe: sponsored carousel at top, sponsored products appearing inline multiple times, Featured badge. Includes known duplication bug. | Baseline — shows current problems that motivate the redesign |
+| V1 | Current State | Replicates existing MOXe: sponsored carousel at top, sponsored products appearing inline multiple times, Featured badge. Includes known duplication bug. | Baseline — shows current problems that motivate the redesign |
 | V2 | Deduplicated Inline | Sponsored products appear once, labeled "Sponsored", mixed into organic results at a controlled cadence (1 sponsored per 4 organic). No carousel. | Balances advertiser visibility with relevance. Reduces redundancy and potential overcharging. |
-| V3 | Top Rail Only | All sponsored content isolated to a carousel/banner rail at top. Organic results below are completely clean. | Cleanest buyer experience below the fold. Risk: lower engagement if buyers scroll past carousel. |
+| V3 | Bottom Rail | Sponsored carousel is fixed to the bottom of the screen, overlaying search results. The organic results list is completely uninterrupted from top to bottom. | Persistent sponsor visibility without disrupting the browse flow. Risk: carousel may be ignored as buyers focus on the main list above. |
 | V4 | Sponsored Interstitial | Sponsored content appears as full-width content breaks between groups of organic results (e.g., every 5–6 products). Uses branded section headers like "Trusted Pantry Staples." | High visual impact for advertisers without interrupting individual product comparison. Works well for category-level promotions. |
 | V5 | Right Rail / Sidebar | Sponsored products appear in a dedicated right-column sidebar. Main list is entirely organic. | Clear separation of sponsored and organic. Risk: buyers may learn to ignore the rail. |
 | V6 | Search-Triggered Spotlight | When a search term matches a sponsored keyword, a featured hero unit appears at top of results. Collapses if no sponsored match exists. | Highest relevance for advertisers investing in specific keywords. Supports future semantic search evolution. |
@@ -64,7 +64,7 @@ The variation switcher allows toggling between 6 layouts instantly with no page 
 ## Prototype Scope
 
 ### Included
-- Pixel-faithful replication of Moxe desktop catalog and search results
+- Pixel-faithful replication of MOXe desktop catalog and search results
 - Variation switcher UI (tab bar or dropdown) — no page reload
 - Realistic mock product data (names, images, SKUs, pricing, ratings, tag pills)
 - Realistic sponsored product mock data with advertiser labels
@@ -97,7 +97,7 @@ src/
 ├── variations/
 │   ├── V1_CurrentState.jsx
 │   ├── V2_DeduplicatedInline.jsx
-│   ├── V3_TopRailOnly.jsx
+│   ├── V3_TopRailOnly.jsx       # Bottom Rail — carousel fixed to bottom overlay
 │   ├── V4_SponsoredInterstitial.jsx
 │   ├── V5_RightRail.jsx
 │   └── V6_SearchSpotlight.jsx
@@ -200,7 +200,7 @@ Each variation displays a short inline description label explaining its layout p
 
 ## Visual Style Reference
 
-Match the US Foods Moxe desktop visual language:
+Match the US Foods MOXe desktop visual language:
 
 - **Primary green:** US Foods brand green (approx. `#4CAF50`)
 - **DIRECT pill:** Orange, outlined
@@ -216,7 +216,7 @@ Match the US Foods Moxe desktop visual language:
 ## Success Criteria
 
 - [ ] Stakeholders can switch between all 6 variations in under 3 seconds with no page reload
-- [ ] V1 (Current State) is recognizable to US Foods stakeholders who use Moxe regularly
+- [ ] V1 (Current State) is recognizable to US Foods stakeholders who use MOXe regularly
 - [ ] App runs locally via `npm run dev` with no external dependencies
 - [ ] Adding a new variation requires only a new layout file — no changes to shared components
 - [ ] Demo can be used in a live 30-minute stakeholder presentation with James and Veo
@@ -244,12 +244,12 @@ Match the US Foods Moxe desktop visual language:
 - Mobile/tablet responsive layouts
 - Semantic vs. keyword search exploration
 
-**Future considerations (from Slalom–Moxe alignment session):**
+**Future considerations (from Slalom–MOXe alignment session):**
 - A Customer Data Platform (CDP) is a foundational prerequisite for V5 and V6 to reach full potential — enables audience-based targeting and robust product analytics
-- Data contracts between Moxe, Sales Cloud, and Marketing Cloud are needed to prevent attribution breakage as the UI evolves
+- Data contracts between MOXe, Sales Cloud, and Marketing Cloud are needed to prevent attribution breakage as the UI evolves
 - Miro-based user journey map (Evan) will support future prototyping and testing sessions
 - If the ad platform proves profitable, a broader vision document will be required (James/Emily)
 
 ---
 
-*Prepared by Slalom Consulting | US Foods Moxe — Ad Platform Experience | Confidential*
+*Prepared by Slalom Consulting | US Foods MOXe — Ad Platform Experience | Confidential*

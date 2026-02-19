@@ -42,7 +42,7 @@ export default function V1_CurrentState({ products, carousel, searchTerm = 'HUSH
       {/* Variation Label */}
       <div className="px-4 py-3" style={{ backgroundColor: '#E3F2FD', borderTopColor: '#90CAF9', borderTopWidth: '1px' }}>
         <div className="max-w-7xl mx-auto text-sm" style={{ color: '#1565C0' }}>
-          <strong>V1 - Current State:</strong> Replicates existing Moxe experience. Sponsored products appear inline and may be duplicated. Carousel at top.
+          <strong>V1 - Current State:</strong> Replicates existing MOXe experience. Sponsored products appear inline and may be duplicated. Carousel at top.
         </div>
       </div>
     </div>

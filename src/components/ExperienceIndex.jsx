@@ -38,17 +38,17 @@ function Diagram({ type, color }) {
         {row(70, W, org)}
       </svg>
     ),
-    // Carousel at top, zero sponsored below
+    // Zero sponsored inline, carousel fixed to bottom
     v3: (
       <svg viewBox={`0 0 ${W} 80`} width="100%">
-        <rect x="0" y="0" width={W} height="14" rx="2" fill={sp} fillOpacity="0.7" />
-        <text x={W / 2} y="10" textAnchor="middle" fontSize="6" fill="white" fontWeight="bold">SPONSORED CAROUSEL</text>
+        {row(0,  W, org)}
+        {row(10, W, org)}
         {row(20, W, org)}
         {row(30, W, org)}
         {row(40, W, org)}
         {row(50, W, org)}
-        {row(60, W, org)}
-        {row(70, W, org)}
+        <rect x="0" y="63" width={W} height="14" rx="2" fill={sp} fillOpacity="0.7" />
+        <text x={W / 2} y="73" textAnchor="middle" fontSize="6" fill="white" fontWeight="bold">SPONSORED CAROUSEL</text>
       </svg>
     ),
     // Groups of organic separated by full-width interstitial
@@ -125,11 +125,11 @@ const variations = [
     id: 'v3',
     tag: 'V3',
     color: '#805AD5',
-    title: 'Top Rail Only',
-    description: 'All sponsored content isolated to the carousel at top. Zero sponsored products in the organic list below.',
-    features: ['Sponsored carousel at top', 'Zero sponsored inline', '100% organic results list'],
-    benefits: ['Highest organic trust — zero ad clutter below fold', 'Sponsors get premium above-fold placement', 'Clearest separation of paid vs. earned results'],
-    testing: ['Measure carousel interaction rate vs. organic conversion', 'Ask users to rate perceived trustworthiness of results', 'Track whether users return to carousel after browsing list'],
+    title: 'Bottom Rail',
+    description: 'Sponsored carousel is fixed to the bottom of the screen, overlaying results. The organic list is completely uninterrupted.',
+    features: ['Sponsored carousel anchored to bottom', 'Zero sponsored inline', '100% organic results list'],
+    benefits: ['Organic browse is completely uninterrupted', 'Carousel stays persistently visible while scrolling', 'Clear spatial separation of sponsored vs. organic'],
+    testing: ['Measure carousel interaction rate vs. organic conversion', 'Ask users to rate perceived trustworthiness of results', 'Track whether users engage with the bottom rail while browsing'],
   },
   {
     id: 'v4',
@@ -279,7 +279,7 @@ export default function ExperienceIndex() {
       <div className="bg-white px-8 py-4 flex items-center justify-between" style={{ borderBottomColor: '#E0E0E0', borderBottomWidth: '1px' }}>
         <img src={USFoodsLogo} alt="US Foods" className="h-10 w-auto" />
         <div className="text-right">
-          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#CF4520' }}>Internal Prototype</p>
+          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#CF4520' }}>MOXe POC</p>
           <p className="text-xs" style={{ color: '#717073' }}>Ad Placement A/B Testing</p>
         </div>
       </div>
