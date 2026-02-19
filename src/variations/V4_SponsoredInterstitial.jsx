@@ -53,7 +53,7 @@ export default function V4_SponsoredInterstitial({ products, carousel, searchTer
       {/* Variation Label */}
       <div className="px-4 py-3" style={{ backgroundColor: '#E3F2FD', borderTopColor: '#90CAF9', borderTopWidth: '1px' }}>
         <div className="max-w-7xl mx-auto text-sm" style={{ color: '#1565C0' }}>
-          <strong>V4 – Sponsored Interstitial:</strong> Sponsored content appears as full-width branded breaks between every 5 organic results. High visual impact without interrupting individual product comparison.
+          <strong>V4 – Sponsored Interstitial: ABC</strong> Sponsored content appears as full-width branded breaks between every 5 organic results. High visual impact without interrupting individual product comparison.
         </div>
       </div>
 
